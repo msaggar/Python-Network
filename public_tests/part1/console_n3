@@ -1,0 +1,5 @@
+hostname n3 port 26609
+MESSAGE_HANDLER: initialize(26609)
+LISTENER: start()
+MESSAGE_HANDLER: start()
+time = 5

@@ -1,0 +1,764 @@
+hostname n2 port 58877
+MESSAGE_HANDLER: initialize(58877)
+LISTENER: start()
+MESSAGE_HANDLER: start()
+LISTENER: received [<n1,n2,000,00,0000,false,EDGEB,n1 127.0.0.1 41775>]
+COMMAND_HANDLER: receive_edgeb
+COMMAND_HANDLER: adgeb_add_mappings(n1 127.0.0.1 41775)
+LISTENER: received [<n1,n2,001,00,0000,false,FLOOD,n2 1>]
+COMMAND_HANDLER: receive_flood()
+COMMAND_HANDLER: dijkstra
+	NEW FLOOD [{"n2"=>{"n1"=>1}, "n1"=>{"n2"=>1}}]
+n2 --> {"n1"=>1}
+n1 --> {"n2"=>1}
+destinations: ["n2", "n1"]
+vertex list: ["n2", "n1"]
+closest is n2
+u:n2, v:n1, cost:1
+	node n2, prev n2, dist 0
+closest is n1
+u:n1, v:n2, cost:1
+	node n1, prev n2, dist 1
+	OLD TABLE {"n1"=>{"NEXT_NODE"=>"n1", "DIST"=>1}}
+	new TABLE {"n1"=>{"NEXT_NODE"=>"n1", "DIST"=>1}}
+MESSAGE_HANDLER: sent [<n2,n1,000,00,0000,false,FLOOD,n1 1>] SEQ[0]
+LISTENER: received [<n1,n2,002,00,0000,false,FLOOD,n2 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n2,n1,001,00,0000,false,FLOOD,n1 1>] SEQ[1]
+LISTENER: received [<n1,n2,003,00,0000,false,FLOOD,n2 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n2,n1,002,00,0000,false,FLOOD,n1 1>] SEQ[2]
+LISTENER: received [<n1,n2,004,00,0000,false,FLOOD,n2 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n2,n1,003,00,0000,false,FLOOD,n1 1>] SEQ[3]
+LISTENER: received [<n1,n2,005,00,0000,false,FLOOD,n2 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n2,n1,004,00,0000,false,FLOOD,n1 1>] SEQ[4]
+NODE: edgeb(["127.0.0.1", "127.0.0.1", "n3"])
+MESSAGE_HANDLER: sent [<n2,n3,005,00,0000,false,EDGEB,n2 127.0.0.1 58877>] SEQ[5]
+LISTENER: received [<n1,n2,006,00,0000,false,FLOOD,n2 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n2,n1,006,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[6]
+MESSAGE_HANDLER: sent [<n2,n3,007,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[7]
+MESSAGE_HANDLER: sent [<n1,n3,006,01,0000,false,FLOOD,n2 1>] SEQ[6]
+LISTENER: received [<n3,n2,000,00,0000,false,FLOOD,n2 1>]
+COMMAND_HANDLER: receive_flood()
+COMMAND_HANDLER: dijkstra
+	NEW FLOOD [{"n2"=>{"n1"=>1, "n3"=>1}, "n1"=>{"n2"=>1}, "n3"=>{"n2"=>1}}]
+n2 --> {"n1"=>1, "n3"=>1}
+n1 --> {"n2"=>1}
+n3 --> {"n2"=>1}
+destinations: ["n2", "n1", "n3"]
+vertex list: ["n2", "n1", "n3"]
+closest is n2
+u:n2, v:n1, cost:1
+u:n2, v:n3, cost:1
+	node n2, prev n2, dist 0
+closest is n1
+u:n1, v:n2, cost:1
+	node n1, prev n2, dist 1
+closest is n3
+u:n3, v:n2, cost:1
+	node n3, prev n2, dist 1
+	OLD TABLE {"n1"=>{"NEXT_NODE"=>"n1", "DIST"=>1}, "n3"=>{"NEXT_NODE"=>"n3", "DIST"=>1}}
+	new TABLE {"n1"=>{"NEXT_NODE"=>"n1", "DIST"=>1}, "n3"=>{"NEXT_NODE"=>"n3", "DIST"=>1}}
+LISTENER: received [<n1,n2,006,02,0000,false,FLOOD,n2 1>]
+Rejecting packet with seq: 6 < 6
+MESSAGE_HANDLER: sent [<n3,n1,000,01,0000,false,FLOOD,n2 1>] SEQ[0]
+LISTENER: received [<n3,n2,000,02,0000,false,FLOOD,n2 1>]
+Rejecting packet with seq: 0 < 0
+LISTENER: received [<n1,n2,007,00,0000,false,FLOOD,n2 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n2,n1,008,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[8]
+MESSAGE_HANDLER: sent [<n2,n3,009,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[9]
+MESSAGE_HANDLER: sent [<n1,n3,007,01,0000,false,FLOOD,n2 1>] SEQ[7]
+LISTENER: received [<n3,n2,001,00,0000,false,FLOOD,n2 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n1,n2,007,02,0000,false,FLOOD,n2 1>]
+Rejecting packet with seq: 7 < 7
+MESSAGE_HANDLER: sent [<n3,n1,001,01,0000,false,FLOOD,n2 1>] SEQ[1]
+LISTENER: received [<n3,n2,001,02,0000,false,FLOOD,n2 1>]
+Rejecting packet with seq: 1 < 1
+LISTENER: received [<n1,n2,008,00,0000,false,FLOOD,n2 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n2,n1,010,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[10]
+MESSAGE_HANDLER: sent [<n2,n3,011,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[11]
+MESSAGE_HANDLER: sent [<n1,n3,008,01,0000,false,FLOOD,n2 1>] SEQ[8]
+LISTENER: received [<n3,n2,002,00,0000,false,FLOOD,n2 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n1,n2,008,02,0000,false,FLOOD,n2 1>]
+Rejecting packet with seq: 8 < 8
+MESSAGE_HANDLER: sent [<n3,n1,002,01,0000,false,FLOOD,n2 1>] SEQ[2]
+LISTENER: received [<n3,n2,002,02,0000,false,FLOOD,n2 1>]
+Rejecting packet with seq: 2 < 2
+LISTENER: received [<n1,n2,009,00,0000,false,FLOOD,n2 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n2,n1,012,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[12]
+MESSAGE_HANDLER: sent [<n2,n3,013,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[13]
+MESSAGE_HANDLER: sent [<n1,n3,009,01,0000,false,FLOOD,n2 1>] SEQ[9]
+LISTENER: received [<n3,n2,003,00,0000,false,FLOOD,n2 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n1,n2,009,02,0000,false,FLOOD,n2 1>]
+Rejecting packet with seq: 9 < 9
+MESSAGE_HANDLER: sent [<n3,n1,003,01,0000,false,FLOOD,n2 1>] SEQ[3]
+LISTENER: received [<n3,n2,003,02,0000,false,FLOOD,n2 1>]
+Rejecting packet with seq: 3 < 3
+LISTENER: received [<n1,n2,010,00,0000,false,FLOOD,n2 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n2,n1,014,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[14]
+MESSAGE_HANDLER: sent [<n2,n3,015,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[15]
+MESSAGE_HANDLER: sent [<n1,n3,010,01,0000,false,FLOOD,n2 1>] SEQ[10]
+LISTENER: received [<n3,n2,005,00,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+COMMAND_HANDLER: dijkstra
+	NEW FLOOD [{"n2"=>{"n1"=>1, "n3"=>1}, "n1"=>{"n2"=>1}, "n3"=>{"n2"=>1, "n4"=>1}}]
+n2 --> {"n1"=>1, "n3"=>1}
+n1 --> {"n2"=>1}
+n3 --> {"n2"=>1, "n4"=>1}
+destinations: ["n2", "n1", "n3", "n4"]
+vertex list: ["n2", "n1", "n3", "n4"]
+closest is n2
+u:n2, v:n1, cost:1
+u:n2, v:n3, cost:1
+	node n2, prev n2, dist 0
+closest is n1
+u:n1, v:n2, cost:1
+	node n1, prev n2, dist 1
+closest is n3
+u:n3, v:n2, cost:1
+u:n3, v:n4, cost:1
+	node n3, prev n2, dist 1
+closest is n4
+	OLD TABLE {"n1"=>{"NEXT_NODE"=>"n1", "DIST"=>1}, "n3"=>{"NEXT_NODE"=>"n3", "DIST"=>1}}
+	new TABLE {"n1"=>{"NEXT_NODE"=>"n1", "DIST"=>1}, "n3"=>{"NEXT_NODE"=>"n3", "DIST"=>1}, "n4"=>{"DIST"=>2, "NEXT_NODE"=>"n3"}}
+LISTENER: received [<n1,n2,010,02,0000,false,FLOOD,n2 1>]
+Rejecting packet with seq: 10 < 10
+MESSAGE_HANDLER: sent [<n3,n1,005,01,0000,false,FLOOD,n2 1;n4 1>] SEQ[5]
+LISTENER: received [<n4,n2,000,01,0000,false,FLOOD,n3 1>]
+COMMAND_HANDLER: receive_flood()
+COMMAND_HANDLER: dijkstra
+	NEW FLOOD [{"n2"=>{"n1"=>1, "n3"=>1}, "n1"=>{"n2"=>1}, "n3"=>{"n2"=>1, "n4"=>1}, "n4"=>{"n3"=>1}}]
+n2 --> {"n1"=>1, "n3"=>1}
+n1 --> {"n2"=>1}
+n3 --> {"n2"=>1, "n4"=>1}
+n4 --> {"n3"=>1}
+destinations: ["n2", "n1", "n3", "n4"]
+vertex list: ["n2", "n1", "n3", "n4"]
+closest is n2
+u:n2, v:n1, cost:1
+u:n2, v:n3, cost:1
+	node n2, prev n2, dist 0
+closest is n1
+u:n1, v:n2, cost:1
+	node n1, prev n2, dist 1
+closest is n3
+u:n3, v:n2, cost:1
+u:n3, v:n4, cost:1
+	node n3, prev n2, dist 1
+closest is n4
+u:n4, v:n3, cost:1
+	node n4, prev n3, dist 2
+	OLD TABLE {"n1"=>{"NEXT_NODE"=>"n1", "DIST"=>1}, "n3"=>{"NEXT_NODE"=>"n3", "DIST"=>1}, "n4"=>{"DIST"=>2, "NEXT_NODE"=>"n3"}}
+	new TABLE {"n1"=>{"NEXT_NODE"=>"n1", "DIST"=>1}, "n3"=>{"NEXT_NODE"=>"n3", "DIST"=>1}, "n4"=>{"DIST"=>2, "NEXT_NODE"=>"n3"}}
+LISTENER: received [<n3,n2,005,02,0000,false,FLOOD,n2 1;n4 1>]
+Rejecting packet with seq: 5 < 5
+MESSAGE_HANDLER: sent [<n4,n1,000,02,0000,false,FLOOD,n3 1>] SEQ[0]
+MESSAGE_HANDLER: sent [<n4,n3,000,02,0000,false,FLOOD,n3 1>] SEQ[0]
+LISTENER: received [<n4,n2,000,03,0000,false,FLOOD,n3 1>]
+Rejecting packet with seq: 0 < 0
+LISTENER: received [<n1,n2,011,00,0000,false,FLOOD,n2 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n2,n1,016,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[16]
+MESSAGE_HANDLER: sent [<n2,n3,017,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[17]
+MESSAGE_HANDLER: sent [<n1,n3,011,01,0000,false,FLOOD,n2 1>] SEQ[11]
+LISTENER: received [<n3,n2,007,00,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n1,n2,011,02,0000,false,FLOOD,n2 1>]
+Rejecting packet with seq: 11 < 11
+LISTENER: received [<n4,n2,001,01,0000,false,FLOOD,n3 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n3,n1,007,01,0000,false,FLOOD,n2 1;n4 1>] SEQ[7]
+MESSAGE_HANDLER: sent [<n4,n1,001,02,0000,false,FLOOD,n3 1>] SEQ[1]
+MESSAGE_HANDLER: sent [<n4,n3,001,02,0000,false,FLOOD,n3 1>] SEQ[1]
+LISTENER: received [<n3,n2,007,02,0000,false,FLOOD,n2 1;n4 1>]
+Rejecting packet with seq: 7 < 7
+LISTENER: received [<n4,n2,001,03,0000,false,FLOOD,n3 1>]
+Rejecting packet with seq: 1 < 1
+LISTENER: received [<n1,n2,012,00,0000,false,FLOOD,n2 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n2,n1,018,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[18]
+MESSAGE_HANDLER: sent [<n2,n3,019,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[19]
+MESSAGE_HANDLER: sent [<n1,n3,012,01,0000,false,FLOOD,n2 1>] SEQ[12]
+LISTENER: received [<n3,n2,009,00,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n1,n2,012,02,0000,false,FLOOD,n2 1>]
+Rejecting packet with seq: 12 < 12
+MESSAGE_HANDLER: sent [<n3,n1,009,01,0000,false,FLOOD,n2 1;n4 1>] SEQ[9]
+LISTENER: received [<n4,n2,002,01,0000,false,FLOOD,n3 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n3,n2,009,02,0000,false,FLOOD,n2 1;n4 1>]
+Rejecting packet with seq: 9 < 9
+MESSAGE_HANDLER: sent [<n4,n1,002,02,0000,false,FLOOD,n3 1>] SEQ[2]
+MESSAGE_HANDLER: sent [<n4,n3,002,02,0000,false,FLOOD,n3 1>] SEQ[2]
+LISTENER: received [<n4,n2,002,03,0000,false,FLOOD,n3 1>]
+Rejecting packet with seq: 2 < 2
+LISTENER: received [<n1,n2,013,00,0000,false,FLOOD,n2 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n1,n3,013,01,0000,false,FLOOD,n2 1>] SEQ[13]
+MESSAGE_HANDLER: sent [<n2,n1,020,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[20]
+MESSAGE_HANDLER: sent [<n2,n3,021,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[21]
+LISTENER: received [<n3,n2,011,00,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n1,n2,013,02,0000,false,FLOOD,n2 1>]
+Rejecting packet with seq: 13 < 13
+MESSAGE_HANDLER: sent [<n3,n1,011,01,0000,false,FLOOD,n2 1;n4 1>] SEQ[11]
+LISTENER: received [<n3,n2,011,02,0000,false,FLOOD,n2 1;n4 1>]
+Rejecting packet with seq: 11 < 11
+LISTENER: received [<n4,n2,003,01,0000,false,FLOOD,n3 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n4,n1,003,02,0000,false,FLOOD,n3 1>] SEQ[3]
+MESSAGE_HANDLER: sent [<n4,n3,003,02,0000,false,FLOOD,n3 1>] SEQ[3]
+LISTENER: received [<n1,n2,014,00,0000,false,FLOOD,n2 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n4,n2,003,03,0000,false,FLOOD,n3 1>]
+Rejecting packet with seq: 3 < 3
+MESSAGE_HANDLER: sent [<n2,n1,022,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[22]
+MESSAGE_HANDLER: sent [<n2,n3,023,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[23]
+MESSAGE_HANDLER: sent [<n1,n3,014,01,0000,false,FLOOD,n2 1>] SEQ[14]
+LISTENER: received [<n3,n2,013,00,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n1,n2,014,02,0000,false,FLOOD,n2 1>]
+Rejecting packet with seq: 14 < 14
+LISTENER: received [<n4,n2,004,01,0000,false,FLOOD,n3 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n3,n1,013,01,0000,false,FLOOD,n2 1;n4 1>] SEQ[13]
+MESSAGE_HANDLER: sent [<n4,n1,004,02,0000,false,FLOOD,n3 1>] SEQ[4]
+MESSAGE_HANDLER: sent [<n4,n3,004,02,0000,false,FLOOD,n3 1>] SEQ[4]
+LISTENER: received [<n3,n2,013,02,0000,false,FLOOD,n2 1;n4 1>]
+Rejecting packet with seq: 13 < 13
+LISTENER: received [<n4,n2,004,03,0000,false,FLOOD,n3 1>]
+Rejecting packet with seq: 4 < 4
+LISTENER: received [<n1,n2,015,00,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+COMMAND_HANDLER: dijkstra
+	NEW FLOOD [{"n2"=>{"n1"=>1, "n3"=>1}, "n1"=>{"n2"=>1, "n4"=>1}, "n3"=>{"n2"=>1, "n4"=>1}, "n4"=>{"n3"=>1}}]
+n2 --> {"n1"=>1, "n3"=>1}
+n1 --> {"n2"=>1, "n4"=>1}
+n3 --> {"n2"=>1, "n4"=>1}
+n4 --> {"n3"=>1}
+destinations: ["n2", "n1", "n3", "n4"]
+vertex list: ["n2", "n1", "n3", "n4"]
+closest is n2
+u:n2, v:n1, cost:1
+u:n2, v:n3, cost:1
+	node n2, prev n2, dist 0
+closest is n1
+u:n1, v:n2, cost:1
+u:n1, v:n4, cost:1
+	node n1, prev n2, dist 1
+closest is n3
+u:n3, v:n2, cost:1
+u:n3, v:n4, cost:1
+	node n3, prev n2, dist 1
+closest is n4
+u:n4, v:n3, cost:1
+	node n4, prev n1, dist 2
+	OLD TABLE {"n1"=>{"NEXT_NODE"=>"n1", "DIST"=>1}, "n3"=>{"NEXT_NODE"=>"n3", "DIST"=>1}, "n4"=>{"DIST"=>2, "NEXT_NODE"=>"n3"}}
+	new TABLE {"n1"=>{"NEXT_NODE"=>"n1", "DIST"=>1}, "n3"=>{"NEXT_NODE"=>"n3", "DIST"=>1}, "n4"=>{"DIST"=>2, "NEXT_NODE"=>"n1"}}
+MESSAGE_HANDLER: sent [<n1,n3,015,01,0000,false,FLOOD,n2 1;n4 1>] SEQ[15]
+MESSAGE_HANDLER: sent [<n2,n1,024,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[24]
+MESSAGE_HANDLER: sent [<n2,n3,025,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[25]
+LISTENER: received [<n1,n2,015,02,0000,false,FLOOD,n2 1;n4 1>]
+Rejecting packet with seq: 15 < 15
+LISTENER: received [<n1,n2,016,02,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n4,n2,006,01,0000,false,FLOOD,n3 1;n1 1>]
+COMMAND_HANDLER: receive_flood()
+COMMAND_HANDLER: dijkstra
+	NEW FLOOD [{"n2"=>{"n1"=>1, "n3"=>1}, "n1"=>{"n2"=>1, "n4"=>1}, "n3"=>{"n2"=>1, "n4"=>1}, "n4"=>{"n3"=>1, "n1"=>1}}]
+n2 --> {"n1"=>1, "n3"=>1}
+n1 --> {"n2"=>1, "n4"=>1}
+n3 --> {"n2"=>1, "n4"=>1}
+n4 --> {"n3"=>1, "n1"=>1}
+destinations: ["n2", "n1", "n3", "n4"]
+vertex list: ["n2", "n1", "n3", "n4"]
+closest is n2
+u:n2, v:n1, cost:1
+u:n2, v:n3, cost:1
+	node n2, prev n2, dist 0
+closest is n1
+u:n1, v:n2, cost:1
+u:n1, v:n4, cost:1
+	node n1, prev n2, dist 1
+closest is n3
+u:n3, v:n2, cost:1
+u:n3, v:n4, cost:1
+	node n3, prev n2, dist 1
+closest is n4
+u:n4, v:n3, cost:1
+u:n4, v:n1, cost:1
+	node n4, prev n1, dist 2
+	OLD TABLE {"n1"=>{"NEXT_NODE"=>"n1", "DIST"=>1}, "n3"=>{"NEXT_NODE"=>"n3", "DIST"=>1}, "n4"=>{"DIST"=>2, "NEXT_NODE"=>"n1"}}
+	new TABLE {"n1"=>{"NEXT_NODE"=>"n1", "DIST"=>1}, "n3"=>{"NEXT_NODE"=>"n3", "DIST"=>1}, "n4"=>{"DIST"=>2, "NEXT_NODE"=>"n1"}}
+LISTENER: received [<n3,n2,015,00,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n4,n2,007,01,0000,false,FLOOD,n3 1;n1 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n1,n3,016,03,0000,false,FLOOD,n2 1;n4 1>] SEQ[16]
+MESSAGE_HANDLER: sent [<n4,n1,006,02,0000,false,FLOOD,n3 1;n1 1>] SEQ[6]
+MESSAGE_HANDLER: sent [<n4,n3,006,02,0000,false,FLOOD,n3 1;n1 1>] SEQ[6]
+MESSAGE_HANDLER: sent [<n3,n1,015,01,0000,false,FLOOD,n2 1;n4 1>] SEQ[15]
+MESSAGE_HANDLER: sent [<n4,n1,007,02,0000,false,FLOOD,n3 1;n1 1>] SEQ[7]
+MESSAGE_HANDLER: sent [<n4,n3,007,02,0000,false,FLOOD,n3 1;n1 1>] SEQ[7]
+LISTENER: received [<n4,n2,007,03,0000,false,FLOOD,n3 1;n1 1>]
+Rejecting packet with seq: 7 < 7
+LISTENER: received [<n3,n2,016,02,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n3,n1,016,03,0000,false,FLOOD,n2 1;n4 1>] SEQ[16]
+LISTENER: received [<n1,n2,017,00,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n1,n3,017,01,0000,false,FLOOD,n2 1;n4 1>] SEQ[17]
+MESSAGE_HANDLER: sent [<n2,n1,026,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[26]
+MESSAGE_HANDLER: sent [<n2,n3,027,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[27]
+LISTENER: received [<n1,n2,017,02,0000,false,FLOOD,n2 1;n4 1>]
+Rejecting packet with seq: 17 < 17
+LISTENER: received [<n1,n2,018,02,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n4,n2,008,01,0000,false,FLOOD,n3 1;n1 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n3,n2,017,00,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n4,n2,009,01,0000,false,FLOOD,n3 1;n1 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n1,n3,018,03,0000,false,FLOOD,n2 1;n4 1>] SEQ[18]
+MESSAGE_HANDLER: sent [<n4,n1,008,02,0000,false,FLOOD,n3 1;n1 1>] SEQ[8]
+MESSAGE_HANDLER: sent [<n4,n3,008,02,0000,false,FLOOD,n3 1;n1 1>] SEQ[8]
+MESSAGE_HANDLER: sent [<n3,n1,017,01,0000,false,FLOOD,n2 1;n4 1>] SEQ[17]
+MESSAGE_HANDLER: sent [<n4,n1,009,02,0000,false,FLOOD,n3 1;n1 1>] SEQ[9]
+MESSAGE_HANDLER: sent [<n4,n3,009,02,0000,false,FLOOD,n3 1;n1 1>] SEQ[9]
+LISTENER: received [<n4,n2,009,03,0000,false,FLOOD,n3 1;n1 1>]
+Rejecting packet with seq: 9 < 9
+LISTENER: received [<n3,n2,018,02,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n3,n1,018,03,0000,false,FLOOD,n2 1;n4 1>] SEQ[18]
+LISTENER: received [<n1,n2,019,00,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n2,n1,028,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[28]
+MESSAGE_HANDLER: sent [<n2,n3,029,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[29]
+MESSAGE_HANDLER: sent [<n1,n3,019,01,0000,false,FLOOD,n2 1;n4 1>] SEQ[19]
+LISTENER: received [<n3,n2,019,00,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n4,n2,010,01,0000,false,FLOOD,n3 1;n1 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n1,n2,020,02,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n4,n2,011,01,0000,false,FLOOD,n3 1;n1 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n3,n1,019,01,0000,false,FLOOD,n2 1;n4 1>] SEQ[19]
+MESSAGE_HANDLER: sent [<n4,n1,010,02,0000,false,FLOOD,n3 1;n1 1>] SEQ[10]
+MESSAGE_HANDLER: sent [<n4,n3,010,02,0000,false,FLOOD,n3 1;n1 1>] SEQ[10]
+MESSAGE_HANDLER: sent [<n1,n3,020,03,0000,false,FLOOD,n2 1;n4 1>] SEQ[20]
+MESSAGE_HANDLER: sent [<n4,n1,011,02,0000,false,FLOOD,n3 1;n1 1>] SEQ[11]
+MESSAGE_HANDLER: sent [<n4,n3,011,02,0000,false,FLOOD,n3 1;n1 1>] SEQ[11]
+LISTENER: received [<n4,n2,011,03,0000,false,FLOOD,n3 1;n1 1>]
+Rejecting packet with seq: 11 < 11
+LISTENER: received [<n3,n2,020,02,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n3,n1,020,03,0000,false,FLOOD,n2 1;n4 1>] SEQ[20]
+LISTENER: received [<n1,n2,021,00,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n4,n2,013,01,0000,false,FLOOD,n3 1;n1 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n2,n1,030,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[30]
+MESSAGE_HANDLER: sent [<n2,n3,031,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[31]
+MESSAGE_HANDLER: sent [<n1,n3,021,01,0000,false,FLOOD,n2 1;n4 1>] SEQ[21]
+MESSAGE_HANDLER: sent [<n4,n1,013,02,0000,false,FLOOD,n3 1;n1 1>] SEQ[13]
+MESSAGE_HANDLER: sent [<n4,n3,013,02,0000,false,FLOOD,n3 1;n1 1>] SEQ[13]
+LISTENER: received [<n4,n2,012,01,0000,false,FLOOD,n3 1;n1 1>]
+Rejecting packet with seq: 12 < 13
+LISTENER: received [<n1,n2,022,02,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n4,n2,013,03,0000,false,FLOOD,n3 1;n1 1>]
+Rejecting packet with seq: 13 < 13
+LISTENER: received [<n3,n2,021,00,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n1,n3,022,03,0000,false,FLOOD,n2 1;n4 1>] SEQ[22]
+MESSAGE_HANDLER: sent [<n3,n1,021,01,0000,false,FLOOD,n2 1;n4 1>] SEQ[21]
+LISTENER: received [<n3,n2,022,02,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n3,n1,022,03,0000,false,FLOOD,n2 1;n4 1>] SEQ[22]
+MESSAGE_HANDLER: sent [<n2,n1,032,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[32]
+MESSAGE_HANDLER: sent [<n2,n3,033,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[33]
+LISTENER: received [<n1,n2,023,00,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n4,n2,015,01,0000,false,FLOOD,n3 1;n1 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n3,n2,023,00,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n4,n2,014,01,0000,false,FLOOD,n3 1;n1 1>]
+Rejecting packet with seq: 14 < 15
+MESSAGE_HANDLER: sent [<n1,n3,023,01,0000,false,FLOOD,n2 1;n4 1>] SEQ[23]
+MESSAGE_HANDLER: sent [<n4,n1,015,02,0000,false,FLOOD,n3 1;n1 1>] SEQ[15]
+MESSAGE_HANDLER: sent [<n4,n3,015,02,0000,false,FLOOD,n3 1;n1 1>] SEQ[15]
+MESSAGE_HANDLER: sent [<n3,n1,023,01,0000,false,FLOOD,n2 1;n4 1>] SEQ[23]
+LISTENER: received [<n1,n2,023,02,0000,false,FLOOD,n2 1;n4 1>]
+Rejecting packet with seq: 23 < 23
+LISTENER: received [<n4,n2,015,03,0000,false,FLOOD,n3 1;n1 1>]
+Rejecting packet with seq: 15 < 15
+LISTENER: received [<n1,n2,024,02,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n3,n2,023,02,0000,false,FLOOD,n2 1;n4 1>]
+Rejecting packet with seq: 23 < 23
+LISTENER: received [<n3,n2,024,02,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n1,n3,024,03,0000,false,FLOOD,n2 1;n4 1>] SEQ[24]
+MESSAGE_HANDLER: sent [<n3,n1,024,03,0000,false,FLOOD,n2 1;n4 1>] SEQ[24]
+LISTENER: received [<n1,n2,025,00,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n4,n2,017,01,0000,false,FLOOD,n3 1;n1 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n2,n1,034,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[34]
+MESSAGE_HANDLER: sent [<n2,n3,035,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[35]
+MESSAGE_HANDLER: sent [<n1,n3,025,01,0000,false,FLOOD,n2 1;n4 1>] SEQ[25]
+MESSAGE_HANDLER: sent [<n4,n1,017,02,0000,false,FLOOD,n3 1;n1 1>] SEQ[17]
+MESSAGE_HANDLER: sent [<n4,n3,017,02,0000,false,FLOOD,n3 1;n1 1>] SEQ[17]
+LISTENER: received [<n3,n2,025,00,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n4,n2,016,01,0000,false,FLOOD,n3 1;n1 1>]
+Rejecting packet with seq: 16 < 17
+LISTENER: received [<n1,n2,025,02,0000,false,FLOOD,n2 1;n4 1>]
+Rejecting packet with seq: 25 < 25
+LISTENER: received [<n4,n2,017,03,0000,false,FLOOD,n3 1;n1 1>]
+Rejecting packet with seq: 17 < 17
+LISTENER: received [<n1,n2,026,02,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n3,n1,025,01,0000,false,FLOOD,n2 1;n4 1>] SEQ[25]
+MESSAGE_HANDLER: sent [<n1,n3,026,03,0000,false,FLOOD,n2 1;n4 1>] SEQ[26]
+LISTENER: received [<n3,n2,026,02,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+NODE: dumptable(["./n2_t0_d1_table.dt"])
+Dumptable called - view of routing table: {"n1"=>{"NEXT_NODE"=>"n1", "DIST"=>1}, "n3"=>{"NEXT_NODE"=>"n3", "DIST"=>1}, "n4"=>{"DIST"=>2, "NEXT_NODE"=>"n1"}}
+MESSAGE_HANDLER: sent [<n3,n1,026,03,0000,false,FLOOD,n2 1;n4 1>] SEQ[26]
+LISTENER: received [<n1,n2,027,00,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n4,n2,019,01,0000,false,FLOOD,n3 1;n1 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n2,n1,036,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[36]
+MESSAGE_HANDLER: sent [<n2,n3,037,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[37]
+MESSAGE_HANDLER: sent [<n1,n3,027,01,0000,false,FLOOD,n2 1;n4 1>] SEQ[27]
+MESSAGE_HANDLER: sent [<n4,n1,019,02,0000,false,FLOOD,n3 1;n1 1>] SEQ[19]
+MESSAGE_HANDLER: sent [<n4,n3,019,02,0000,false,FLOOD,n3 1;n1 1>] SEQ[19]
+LISTENER: received [<n3,n2,027,00,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n4,n2,018,01,0000,false,FLOOD,n3 1;n1 1>]
+Rejecting packet with seq: 18 < 19
+LISTENER: received [<n1,n2,027,02,0000,false,FLOOD,n2 1;n4 1>]
+Rejecting packet with seq: 27 < 27
+LISTENER: received [<n4,n2,019,03,0000,false,FLOOD,n3 1;n1 1>]
+Rejecting packet with seq: 19 < 19
+LISTENER: received [<n3,n2,028,02,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n3,n1,027,01,0000,false,FLOOD,n2 1;n4 1>] SEQ[27]
+MESSAGE_HANDLER: sent [<n3,n1,028,03,0000,false,FLOOD,n2 1;n4 1>] SEQ[28]
+LISTENER: received [<n1,n2,028,02,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n1,n3,028,03,0000,false,FLOOD,n2 1;n4 1>] SEQ[28]
+LISTENER: received [<n1,n2,029,00,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n4,n2,021,01,0000,false,FLOOD,n3 1;n1 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n2,n1,038,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[38]
+MESSAGE_HANDLER: sent [<n2,n3,039,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[39]
+MESSAGE_HANDLER: sent [<n1,n3,029,01,0000,false,FLOOD,n2 1;n4 1>] SEQ[29]
+MESSAGE_HANDLER: sent [<n4,n1,021,02,0000,false,FLOOD,n3 1;n1 1>] SEQ[21]
+MESSAGE_HANDLER: sent [<n4,n3,021,02,0000,false,FLOOD,n3 1;n1 1>] SEQ[21]
+LISTENER: received [<n3,n2,029,00,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n4,n2,020,01,0000,false,FLOOD,n3 1;n1 1>]
+Rejecting packet with seq: 20 < 21
+LISTENER: received [<n1,n2,029,02,0000,false,FLOOD,n2 1;n4 1>]
+Rejecting packet with seq: 29 < 29
+LISTENER: received [<n4,n2,021,03,0000,false,FLOOD,n3 1;n1 1>]
+Rejecting packet with seq: 21 < 21
+LISTENER: received [<n1,n2,030,02,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n3,n2,030,02,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n3,n1,029,01,0000,false,FLOOD,n2 1;n4 1>] SEQ[29]
+MESSAGE_HANDLER: sent [<n1,n3,030,03,0000,false,FLOOD,n2 1;n4 1>] SEQ[30]
+MESSAGE_HANDLER: sent [<n3,n1,030,03,0000,false,FLOOD,n2 1;n4 1>] SEQ[30]
+LISTENER: received [<n1,n2,031,00,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n4,n2,023,01,0000,false,FLOOD,n3 1;n1 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n2,n1,040,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[40]
+MESSAGE_HANDLER: sent [<n2,n3,041,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[41]
+MESSAGE_HANDLER: sent [<n1,n3,031,01,0000,false,FLOOD,n2 1;n4 1>] SEQ[31]
+MESSAGE_HANDLER: sent [<n4,n1,023,02,0000,false,FLOOD,n3 1;n1 1>] SEQ[23]
+MESSAGE_HANDLER: sent [<n4,n3,023,02,0000,false,FLOOD,n3 1;n1 1>] SEQ[23]
+LISTENER: received [<n4,n2,022,01,0000,false,FLOOD,n3 1;n1 1>]
+Rejecting packet with seq: 22 < 23
+LISTENER: received [<n1,n2,031,02,0000,false,FLOOD,n2 1;n4 1>]
+Rejecting packet with seq: 31 < 31
+LISTENER: received [<n4,n2,023,03,0000,false,FLOOD,n3 1;n1 1>]
+Rejecting packet with seq: 23 < 23
+LISTENER: received [<n3,n2,031,00,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n3,n1,031,01,0000,false,FLOOD,n2 1;n4 1>] SEQ[31]
+LISTENER: received [<n3,n2,032,02,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n1,n2,032,02,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n3,n1,032,03,0000,false,FLOOD,n2 1;n4 1>] SEQ[32]
+MESSAGE_HANDLER: sent [<n1,n3,032,03,0000,false,FLOOD,n2 1;n4 1>] SEQ[32]
+LISTENER: received [<n1,n2,033,00,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n4,n2,025,01,0000,false,FLOOD,n3 1;n1 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n2,n1,042,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[42]
+MESSAGE_HANDLER: sent [<n2,n3,043,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[43]
+MESSAGE_HANDLER: sent [<n1,n3,033,01,0000,false,FLOOD,n2 1;n4 1>] SEQ[33]
+MESSAGE_HANDLER: sent [<n4,n1,025,02,0000,false,FLOOD,n3 1;n1 1>] SEQ[25]
+MESSAGE_HANDLER: sent [<n4,n3,025,02,0000,false,FLOOD,n3 1;n1 1>] SEQ[25]
+LISTENER: received [<n3,n2,033,00,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n4,n2,024,01,0000,false,FLOOD,n3 1;n1 1>]
+Rejecting packet with seq: 24 < 25
+LISTENER: received [<n1,n2,033,02,0000,false,FLOOD,n2 1;n4 1>]
+Rejecting packet with seq: 33 < 33
+LISTENER: received [<n4,n2,025,03,0000,false,FLOOD,n3 1;n1 1>]
+Rejecting packet with seq: 25 < 25
+LISTENER: received [<n3,n2,034,02,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n3,n1,033,01,0000,false,FLOOD,n2 1;n4 1>] SEQ[33]
+MESSAGE_HANDLER: sent [<n3,n1,034,03,0000,false,FLOOD,n2 1;n4 1>] SEQ[34]
+LISTENER: received [<n1,n2,034,02,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n1,n3,034,03,0000,false,FLOOD,n2 1;n4 1>] SEQ[34]
+LISTENER: received [<n1,n2,035,00,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n4,n2,027,01,0000,false,FLOOD,n3 1;n1 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n2,n1,044,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[44]
+MESSAGE_HANDLER: sent [<n2,n3,045,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[45]
+MESSAGE_HANDLER: sent [<n1,n3,035,01,0000,false,FLOOD,n2 1;n4 1>] SEQ[35]
+MESSAGE_HANDLER: sent [<n4,n1,027,02,0000,false,FLOOD,n3 1;n1 1>] SEQ[27]
+MESSAGE_HANDLER: sent [<n4,n3,027,02,0000,false,FLOOD,n3 1;n1 1>] SEQ[27]
+LISTENER: received [<n3,n2,035,00,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n4,n2,026,01,0000,false,FLOOD,n3 1;n1 1>]
+Rejecting packet with seq: 26 < 27
+LISTENER: received [<n1,n2,035,02,0000,false,FLOOD,n2 1;n4 1>]
+Rejecting packet with seq: 35 < 35
+LISTENER: received [<n4,n2,027,03,0000,false,FLOOD,n3 1;n1 1>]
+Rejecting packet with seq: 27 < 27
+LISTENER: received [<n3,n2,036,02,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n3,n1,035,01,0000,false,FLOOD,n2 1;n4 1>] SEQ[35]
+MESSAGE_HANDLER: sent [<n3,n1,036,03,0000,false,FLOOD,n2 1;n4 1>] SEQ[36]
+LISTENER: received [<n1,n2,036,02,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n1,n3,036,03,0000,false,FLOOD,n2 1;n4 1>] SEQ[36]
+LISTENER: received [<n1,n2,037,00,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n2,n1,046,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[46]
+MESSAGE_HANDLER: sent [<n2,n3,047,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[47]
+MESSAGE_HANDLER: sent [<n1,n3,037,01,0000,false,FLOOD,n2 1;n4 1>] SEQ[37]
+LISTENER: received [<n3,n2,037,00,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n4,n2,028,01,0000,false,FLOOD,n3 1;n1 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n1,n2,037,02,0000,false,FLOOD,n2 1;n4 1>]
+Rejecting packet with seq: 37 < 37
+MESSAGE_HANDLER: sent [<n3,n1,037,01,0000,false,FLOOD,n2 1;n4 1>] SEQ[37]
+MESSAGE_HANDLER: sent [<n4,n1,028,02,0000,false,FLOOD,n3 1;n1 1>] SEQ[28]
+MESSAGE_HANDLER: sent [<n4,n3,028,02,0000,false,FLOOD,n3 1;n1 1>] SEQ[28]
+LISTENER: received [<n1,n2,038,02,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n1,n3,038,03,0000,false,FLOOD,n2 1;n4 1>] SEQ[38]
+MESSAGE_HANDLER: sent [<n2,n1,048,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[48]
+MESSAGE_HANDLER: sent [<n2,n3,049,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[49]
+LISTENER: received [<n3,n2,039,00,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n4,n2,030,01,0000,false,FLOOD,n3 1;n1 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n1,n2,039,02,0000,false,FLOOD,n2 3;n4 1>]
+COMMAND_HANDLER: receive_flood()
+COMMAND_HANDLER: dijkstra
+	NEW FLOOD [{"n2"=>{"n1"=>1, "n3"=>1}, "n1"=>{"n2"=>3, "n4"=>1}, "n3"=>{"n2"=>1, "n4"=>1}, "n4"=>{"n3"=>1, "n1"=>1}}]
+n2 --> {"n1"=>1, "n3"=>1}
+n1 --> {"n2"=>3, "n4"=>1}
+n3 --> {"n2"=>1, "n4"=>1}
+n4 --> {"n3"=>1, "n1"=>1}
+destinations: ["n2", "n1", "n3", "n4"]
+vertex list: ["n2", "n1", "n3", "n4"]
+closest is n2
+u:n2, v:n1, cost:1
+u:n2, v:n3, cost:1
+	node n2, prev n2, dist 0
+closest is n1
+u:n1, v:n2, cost:3
+u:n1, v:n4, cost:1
+	node n1, prev n2, dist 1
+closest is n3
+u:n3, v:n2, cost:1
+u:n3, v:n4, cost:1
+	node n3, prev n2, dist 1
+closest is n4
+u:n4, v:n3, cost:1
+u:n4, v:n1, cost:1
+	node n4, prev n1, dist 2
+	OLD TABLE {"n1"=>{"NEXT_NODE"=>"n1", "DIST"=>1}, "n3"=>{"NEXT_NODE"=>"n3", "DIST"=>1}, "n4"=>{"DIST"=>2, "NEXT_NODE"=>"n1"}}
+	new TABLE {"n1"=>{"NEXT_NODE"=>"n1", "DIST"=>1}, "n3"=>{"NEXT_NODE"=>"n3", "DIST"=>1}, "n4"=>{"DIST"=>2, "NEXT_NODE"=>"n1"}}
+LISTENER: received [<n1,n2,040,02,0000,false,FLOOD,n2 3;n4 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n3,n1,039,01,0000,false,FLOOD,n2 1;n4 1>] SEQ[39]
+MESSAGE_HANDLER: sent [<n4,n1,030,02,0000,false,FLOOD,n3 1;n1 1>] SEQ[30]
+MESSAGE_HANDLER: sent [<n4,n3,030,02,0000,false,FLOOD,n3 1;n1 1>] SEQ[30]
+MESSAGE_HANDLER: sent [<n1,n3,039,03,0000,false,FLOOD,n2 3;n4 1>] SEQ[39]
+MESSAGE_HANDLER: sent [<n1,n3,040,03,0000,false,FLOOD,n2 3;n4 1>] SEQ[40]
+MESSAGE_HANDLER: sent [<n2,n1,050,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[50]
+MESSAGE_HANDLER: sent [<n2,n3,051,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[51]
+LISTENER: received [<n3,n2,041,00,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n4,n2,032,01,0000,false,FLOOD,n3 1;n1 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n1,n2,041,02,0000,false,FLOOD,n2 3;n4 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n1,n2,042,02,0000,false,FLOOD,n2 3;n4 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n3,n1,041,01,0000,false,FLOOD,n2 1;n4 1>] SEQ[41]
+MESSAGE_HANDLER: sent [<n4,n1,032,02,0000,false,FLOOD,n3 1;n1 1>] SEQ[32]
+MESSAGE_HANDLER: sent [<n4,n3,032,02,0000,false,FLOOD,n3 1;n1 1>] SEQ[32]
+MESSAGE_HANDLER: sent [<n1,n3,041,03,0000,false,FLOOD,n2 3;n4 1>] SEQ[41]
+MESSAGE_HANDLER: sent [<n1,n3,042,03,0000,false,FLOOD,n2 3;n4 1>] SEQ[42]
+MESSAGE_HANDLER: sent [<n2,n1,052,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[52]
+MESSAGE_HANDLER: sent [<n2,n3,053,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[53]
+LISTENER: received [<n3,n2,043,00,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n4,n2,034,01,0000,false,FLOOD,n3 1;n1 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n1,n2,043,02,0000,false,FLOOD,n2 3;n4 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n1,n2,044,02,0000,false,FLOOD,n2 3;n4 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n3,n1,043,01,0000,false,FLOOD,n2 1;n4 1>] SEQ[43]
+MESSAGE_HANDLER: sent [<n4,n1,034,02,0000,false,FLOOD,n3 1;n1 1>] SEQ[34]
+MESSAGE_HANDLER: sent [<n4,n3,034,02,0000,false,FLOOD,n3 1;n1 1>] SEQ[34]
+MESSAGE_HANDLER: sent [<n1,n3,043,03,0000,false,FLOOD,n2 3;n4 1>] SEQ[43]
+MESSAGE_HANDLER: sent [<n1,n3,044,03,0000,false,FLOOD,n2 3;n4 1>] SEQ[44]
+MESSAGE_HANDLER: sent [<n2,n1,054,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[54]
+MESSAGE_HANDLER: sent [<n2,n3,055,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[55]
+LISTENER: received [<n3,n2,045,00,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n4,n2,036,01,0000,false,FLOOD,n3 1;n1 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n1,n2,045,02,0000,false,FLOOD,n2 3;n4 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n1,n2,046,02,0000,false,FLOOD,n2 3;n4 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n3,n1,045,01,0000,false,FLOOD,n2 1;n4 1>] SEQ[45]
+MESSAGE_HANDLER: sent [<n4,n1,036,02,0000,false,FLOOD,n3 1;n1 1>] SEQ[36]
+MESSAGE_HANDLER: sent [<n4,n3,036,02,0000,false,FLOOD,n3 1;n1 1>] SEQ[36]
+MESSAGE_HANDLER: sent [<n1,n3,045,03,0000,false,FLOOD,n2 3;n4 1>] SEQ[45]
+MESSAGE_HANDLER: sent [<n1,n3,046,03,0000,false,FLOOD,n2 3;n4 1>] SEQ[46]
+MESSAGE_HANDLER: sent [<n2,n1,056,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[56]
+MESSAGE_HANDLER: sent [<n2,n3,057,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[57]
+LISTENER: received [<n3,n2,047,00,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n4,n2,038,01,0000,false,FLOOD,n3 1;n1 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n1,n2,047,02,0000,false,FLOOD,n2 3;n4 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n1,n2,048,02,0000,false,FLOOD,n2 3;n4 1>]
+COMMAND_HANDLER: receive_flood()
+NODE: dumptable(["./n2_t0_d2_table.dt"])
+Dumptable called - view of routing table: {"n1"=>{"NEXT_NODE"=>"n1", "DIST"=>1}, "n3"=>{"NEXT_NODE"=>"n3", "DIST"=>1}, "n4"=>{"DIST"=>2, "NEXT_NODE"=>"n1"}}
+MESSAGE_HANDLER: sent [<n3,n1,047,01,0000,false,FLOOD,n2 1;n4 1>] SEQ[47]
+MESSAGE_HANDLER: sent [<n4,n1,038,02,0000,false,FLOOD,n3 1;n1 1>] SEQ[38]
+MESSAGE_HANDLER: sent [<n4,n3,038,02,0000,false,FLOOD,n3 1;n1 1>] SEQ[38]
+MESSAGE_HANDLER: sent [<n1,n3,047,03,0000,false,FLOOD,n2 3;n4 1>] SEQ[47]
+MESSAGE_HANDLER: sent [<n1,n3,048,03,0000,false,FLOOD,n2 3;n4 1>] SEQ[48]
+MESSAGE_HANDLER: sent [<n2,n1,058,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[58]
+MESSAGE_HANDLER: sent [<n2,n3,059,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[59]
+LISTENER: received [<n3,n2,049,00,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n4,n2,040,01,0000,false,FLOOD,n3 1;n1 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n1,n2,049,02,0000,false,FLOOD,n2 3;n4 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n1,n2,050,02,0000,false,FLOOD,n2 3;n4 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n3,n1,049,01,0000,false,FLOOD,n2 1;n4 1>] SEQ[49]
+MESSAGE_HANDLER: sent [<n4,n1,040,02,0000,false,FLOOD,n3 1;n1 1>] SEQ[40]
+MESSAGE_HANDLER: sent [<n4,n3,040,02,0000,false,FLOOD,n3 1;n1 1>] SEQ[40]
+MESSAGE_HANDLER: sent [<n1,n3,049,03,0000,false,FLOOD,n2 3;n4 1>] SEQ[49]
+MESSAGE_HANDLER: sent [<n1,n3,050,03,0000,false,FLOOD,n2 3;n4 1>] SEQ[50]
+MESSAGE_HANDLER: sent [<n2,n1,060,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[60]
+MESSAGE_HANDLER: sent [<n2,n3,061,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[61]
+LISTENER: received [<n3,n2,051,00,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n4,n2,042,01,0000,false,FLOOD,n3 1;n1 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n1,n2,051,02,0000,false,FLOOD,n2 3;n4 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n1,n2,052,02,0000,false,FLOOD,n2 3;n4 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n3,n1,051,01,0000,false,FLOOD,n2 1;n4 1>] SEQ[51]
+MESSAGE_HANDLER: sent [<n4,n1,042,02,0000,false,FLOOD,n3 1;n1 1>] SEQ[42]
+MESSAGE_HANDLER: sent [<n4,n3,042,02,0000,false,FLOOD,n3 1;n1 1>] SEQ[42]
+MESSAGE_HANDLER: sent [<n1,n3,051,03,0000,false,FLOOD,n2 3;n4 1>] SEQ[51]
+MESSAGE_HANDLER: sent [<n1,n3,052,03,0000,false,FLOOD,n2 3;n4 1>] SEQ[52]
+MESSAGE_HANDLER: sent [<n2,n1,062,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[62]
+MESSAGE_HANDLER: sent [<n2,n3,063,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[63]
+LISTENER: received [<n3,n2,053,00,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n4,n2,044,01,0000,false,FLOOD,n3 1;n1 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n1,n2,053,02,0000,false,FLOOD,n2 3;n4 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n1,n2,054,02,0000,false,FLOOD,n2 3;n4 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n3,n1,053,01,0000,false,FLOOD,n2 1;n4 1>] SEQ[53]
+MESSAGE_HANDLER: sent [<n4,n1,044,02,0000,false,FLOOD,n3 1;n1 1>] SEQ[44]
+MESSAGE_HANDLER: sent [<n4,n3,044,02,0000,false,FLOOD,n3 1;n1 1>] SEQ[44]
+MESSAGE_HANDLER: sent [<n1,n3,053,03,0000,false,FLOOD,n2 3;n4 1>] SEQ[53]
+MESSAGE_HANDLER: sent [<n1,n3,054,03,0000,false,FLOOD,n2 3;n4 1>] SEQ[54]
+MESSAGE_HANDLER: sent [<n2,n1,064,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[64]
+MESSAGE_HANDLER: sent [<n2,n3,065,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[65]
+LISTENER: received [<n3,n2,055,00,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n1,n2,055,02,0000,false,FLOOD,n2 3;n4 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n1,n2,056,02,0000,false,FLOOD,n2 3;n4 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n4,n2,046,01,0000,false,FLOOD,n3 1;n1 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n3,n1,055,01,0000,false,FLOOD,n2 1;n4 1>] SEQ[55]
+MESSAGE_HANDLER: sent [<n1,n3,055,03,0000,false,FLOOD,n2 3;n4 1>] SEQ[55]
+MESSAGE_HANDLER: sent [<n1,n3,056,03,0000,false,FLOOD,n2 3;n4 1>] SEQ[56]
+MESSAGE_HANDLER: sent [<n4,n1,046,02,0000,false,FLOOD,n3 1;n1 1>] SEQ[46]
+MESSAGE_HANDLER: sent [<n4,n3,046,02,0000,false,FLOOD,n3 1;n1 1>] SEQ[46]
+MESSAGE_HANDLER: sent [<n2,n1,066,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[66]
+MESSAGE_HANDLER: sent [<n2,n3,067,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[67]
+LISTENER: received [<n3,n2,057,00,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n4,n2,048,01,0000,false,FLOOD,n3 1;n1 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n1,n2,057,02,0000,false,FLOOD,n2 3;n4 1>]
+COMMAND_HANDLER: receive_flood()
+LISTENER: received [<n1,n2,058,02,0000,false,FLOOD,n2 3;n4 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n3,n1,057,01,0000,false,FLOOD,n2 1;n4 1>] SEQ[57]
+MESSAGE_HANDLER: sent [<n4,n1,048,02,0000,false,FLOOD,n3 1;n1 1>] SEQ[48]
+MESSAGE_HANDLER: sent [<n4,n3,048,02,0000,false,FLOOD,n3 1;n1 1>] SEQ[48]
+MESSAGE_HANDLER: sent [<n1,n3,057,03,0000,false,FLOOD,n2 3;n4 1>] SEQ[57]
+MESSAGE_HANDLER: sent [<n1,n3,058,03,0000,false,FLOOD,n2 3;n4 1>] SEQ[58]
+LISTENER: received [<n3,n2,059,00,0000,false,FLOOD,n2 1;n4 1>]
+COMMAND_HANDLER: receive_flood()
+MESSAGE_HANDLER: sent [<n2,n1,068,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[68]
+MESSAGE_HANDLER: sent [<n2,n3,069,00,0000,false,FLOOD,n1 1;n3 1>] SEQ[69]
+MESSAGE_HANDLER: sent [<n3,n1,059,01,0000,false,FLOOD,n2 1;n4 1>] SEQ[59]
+LISTENER: received [<n4,n2,050,01,0000,false,FLOOD,n3 1;n1 1>]
+COMMAND_HANDLER: receive_flood()
+time = -17

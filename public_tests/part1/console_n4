@@ -1,0 +1,5 @@
+hostname n4 port 6964
+MESSAGE_HANDLER: initialize(6964)
+MESSAGE_HANDLER: start()
+LISTENER: start()
+time = 5

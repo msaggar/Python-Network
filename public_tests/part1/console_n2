@@ -1,0 +1,80 @@
+hostname n2 port 22712
+MESSAGE_HANDLER: initialize(22712)
+MESSAGE_HANDLER: start()
+LISTENER: start()
+arr ["n1", "n1", "n2", "000", "0000", "false", "EDGEB", "n1 127.0.0.1 35636"]
+LISTENER: received [<n1,n1,n2,000,0000,false,EDGEB,n1 127.0.0.1 35636>]
+COMMAND_HANDLER: receive_edgeb
+COMMAND_HANDLER: adgeb_add_mappings(n1 127.0.0.1 35636)
+COMMAND_HANDLER: {"n1"=>{"NEXT_NODE"=>"n1", "DIST"=>1}}
+sending edgeb ack
+data before n1 1;
+data after  n1 1
+	added [<n2,n2,n1,000,0000,false,FLOOD,n1 1>] to queue from n2 seq=0
+MESSAGE_HANDLER: sent [<n2,n2,n1,000,0000,false,FLOOD,n1 1>] SEQ[0]
+arr ["n1", "n1", "n2", "000", "0000", "false", "EDGEB", "n1 127.0.0.1 35636"]
+LISTENER: received [<n1,n1,n2,000,0000,false,EDGEB,n1 127.0.0.1 35636>]
+COMMAND_HANDLER: receive_edgeb
+COMMAND_HANDLER: adgeb_add_mappings(n1 127.0.0.1 35636)
+COMMAND_HANDLER: {"n1"=>{"NEXT_NODE"=>"n1", "DIST"=>1}}
+sending edgeb ack
+arr ["n1", "n1", "n2", "000", "0000", "false", "EDGEB", "n1 127.0.0.1 35636"]
+LISTENER: received [<n1,n1,n2,000,0000,false,EDGEB,n1 127.0.0.1 35636>]
+COMMAND_HANDLER: receive_edgeb
+COMMAND_HANDLER: adgeb_add_mappings(n1 127.0.0.1 35636)
+COMMAND_HANDLER: {"n1"=>{"NEXT_NODE"=>"n1", "DIST"=>1}}
+sending edgeb ack
+arr ["n1", "n1", "n2", "001", "0000", "false", "FLOOD", "n2 1"]
+LISTENER: received [<n1,n1,n2,001,0000,false,FLOOD,n2 1>]
+		receive_flood START from n1, through n1
+	OLD FLOOD {"n2"=>{"n1"=>1}}
+	COMMAND_HANDLER: updating routing table
+	NEW FLOOD [{"n2"=>{"n1"=>1}, "n1"=>{"n2"=>1}}]
+	OLD TABLE {"n1"=>{"NEXT_NODE"=>"n1", "DIST"=>1}}
+	node n2, prev n2, dist 0
+	node n1, prev n2, dist 1
+	new TABLE {"n1"=>{"NEXT_NODE"=>"n1", "DIST"=>1}}
+		receive_flood END
+data before n1 1;n1 1;n1 1;
+data after  n1 1;n1 1;n1 1
+	added [<n2,n2,n1,001,0000,false,FLOOD,n1 1;n1 1;n1 1>] to queue from n2 seq=1
+	added [<n2,n2,n1,002,0000,false,FLOOD,n1 1;n1 1;n1 1>] to queue from n2 seq=2
+	added [<n2,n2,n1,003,0000,false,FLOOD,n1 1;n1 1;n1 1>] to queue from n2 seq=3
+MESSAGE_HANDLER: sent [<n2,n2,n1,001,0000,false,FLOOD,n1 1;n1 1;n1 1>] SEQ[1]
+MESSAGE_HANDLER: sent [<n2,n2,n1,002,0000,false,FLOOD,n1 1;n1 1;n1 1>] SEQ[2]
+MESSAGE_HANDLER: sent [<n2,n2,n1,003,0000,false,FLOOD,n1 1;n1 1;n1 1>] SEQ[3]
+arr ["n1", "n1", "n2", "000", "0000", "false", "EDGEB", "n1 127.0.0.1 35636"]
+LISTENER: received [<n1,n1,n2,000,0000,false,EDGEB,n1 127.0.0.1 35636>]
+COMMAND_HANDLER: receive_edgeb
+COMMAND_HANDLER: adgeb_add_mappings(n1 127.0.0.1 35636)
+COMMAND_HANDLER: {"n1"=>{"NEXT_NODE"=>"n1", "DIST"=>1}}
+sending edgeb ack
+arr ["n1", "n1", "n2", "001", "0000", "false", "FLOOD", "n2 1"]
+LISTENER: received [<n1,n1,n2,001,0000,false,FLOOD,n2 1>]
+		receive_flood START from n1, through n1
+	OLD FLOOD {"n2"=>{"n1"=>1}, "n1"=>{"n2"=>1}}
+		receive_flood END
+arr ["n1", "n1", "n2", "000", "0000", "false", "EDGEB", "n1 127.0.0.1 35636"]
+LISTENER: received [<n1,n1,n2,000,0000,false,EDGEB,n1 127.0.0.1 35636>]
+COMMAND_HANDLER: receive_edgeb
+COMMAND_HANDLER: adgeb_add_mappings(n1 127.0.0.1 35636)
+COMMAND_HANDLER: {"n1"=>{"NEXT_NODE"=>"n1", "DIST"=>1}}
+sending edgeb ack
+arr ["n1", "n1", "n2", "001", "0000", "false", "FLOOD", "n2 1"]
+LISTENER: received [<n1,n1,n2,001,0000,false,FLOOD,n2 1>]
+		receive_flood START from n1, through n1
+	OLD FLOOD {"n2"=>{"n1"=>1}, "n1"=>{"n2"=>1}}
+		receive_flood END
+arr ["n1", "n1", "n2", "002", "0000", "false", "FLOOD", "n2 1"]
+LISTENER: received [<n1,n1,n2,002,0000,false,FLOOD,n2 1>]
+		receive_flood START from n1, through n1
+	OLD FLOOD {"n2"=>{"n1"=>1}, "n1"=>{"n2"=>1}}
+		receive_flood END
+data before n1 1;n1 1;n1 1;n1 1;n1 1;
+data after  n1 1;n1 1;n1 1;n1 1;n1 1
+	added [<n2,n2,n1,004,0000,false,FLOOD,n1 1;n1 1;n1 1;n1 1;n1 1>] to queue from n2 seq=4
+	added [<n2,n2,n1,005,0000,false,FLOOD,n1 1;n1 1;n1 1;n1 1;n1 1>] to queue from n2 seq=5
+	added [<n2,n2,n1,006,0000,false,FLOOD,n1 1;n1 1;n1 1;n1 1;n1 1>] to queue from n2 seq=6
+	added [<n2,n2,n1,007,0000,false,FLOOD,n1 1;n1 1;n1 1;n1 1;n1 1>] to queue from n2 seq=7
+	added [<n2,n2,n1,008,0000,false,FLOOD,n1 1;n1 1;n1 1;n1 1;n1 1>] to queue from n2 seq=8
+time = 4

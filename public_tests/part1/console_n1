@@ -1,0 +1,141 @@
+hostname n1 port 35636
+MESSAGE_HANDLER: initialize(35636)
+LISTENER: start()
+MESSAGE_HANDLER: start()
+NODE: edgeb(["127.0.0.1", "127.0.0.1", "n2"])
+sock info {"n2"=>{"PORT"=>"22712", "SEQ"=>-1, "IP"=>"127.0.0.1"}, "n3"=>{"PORT"=>"26609", "SEQ"=>-1}, "n4"=>{"PORT"=>"6964", "SEQ"=>-1}}
+sending edgeb
+	added [<n1,n1,n2,000,0000,false,EDGEB,n1 127.0.0.1 35636>] to queue from n1 seq=0
+MESSAGE_HANDLER: sent [<n1,n1,n2,000,0000,false,EDGEB,n1 127.0.0.1 35636>] SEQ[0]
+data before n2 1;
+data after  n2 1
+	added [<n1,n1,n2,001,0000,false,FLOOD,n2 1>] to queue from n1 seq=1
+arr ["n2", "n2", "n1", "000", "0000", "false", "FLOOD", "n1 1"]
+LISTENER: received [<n2,n2,n1,000,0000,false,FLOOD,n1 1>]
+		receive_flood START from n2, through n2
+	OLD FLOOD {"n1"=>{"n2"=>1}}
+	COMMAND_HANDLER: updating routing table
+	NEW FLOOD [{"n1"=>{"n2"=>1}, "n2"=>{"n1"=>1}}]
+	OLD TABLE {"n2"=>{"NEXT_NODE"=>"n2", "DIST"=>1}}
+	node n1, prev n1, dist 0
+	node n2, prev n1, dist 1
+	new TABLE {"n2"=>{"NEXT_NODE"=>"n2", "DIST"=>1}}
+		receive_flood END
+MESSAGE_HANDLER: sent [<n1,n1,n2,001,0000,false,FLOOD,n2 1>] SEQ[1]
+data before n2 1;
+data after  n2 1
+	added [<n1,n1,n2,002,0000,false,FLOOD,n2 1>] to queue from n1 seq=2
+arr ["n2", "n2", "n1", "000", "0000", "false", "FLOOD", "n1 1"]
+LISTENER: received [<n2,n2,n1,000,0000,false,FLOOD,n1 1>]
+		receive_flood START from n2, through n2
+	OLD FLOOD {"n1"=>{"n2"=>1}, "n2"=>{"n1"=>1}}
+		receive_flood END
+arr ["n2", "n2", "n1", "000", "0000", "false", "FLOOD", "n1 1"]
+LISTENER: received [<n2,n2,n1,000,0000,false,FLOOD,n1 1>]
+		receive_flood START from n2, through n2
+	OLD FLOOD {"n1"=>{"n2"=>1}, "n2"=>{"n1"=>1}}
+		receive_flood END
+arr ["n2", "n2", "n1", "000", "0000", "false", "FLOOD", "n1 1"]
+LISTENER: received [<n2,n2,n1,000,0000,false,FLOOD,n1 1>]
+		receive_flood START from n2, through n2
+	OLD FLOOD {"n1"=>{"n2"=>1}, "n2"=>{"n1"=>1}}
+		receive_flood END
+arr ["n2", "n2", "n1", "001", "0000", "false", "FLOOD", "n1 1;n1 1;n1 1"]
+LISTENER: received [<n2,n2,n1,001,0000,false,FLOOD,n1 1;n1 1;n1 1>]
+		receive_flood START from n2, through n2
+	OLD FLOOD {"n1"=>{"n2"=>1}, "n2"=>{"n1"=>1}}
+		receive_flood END
+arr ["n2", "n2", "n1", "000", "0000", "false", "FLOOD", "n1 1"]
+LISTENER: received [<n2,n2,n1,000,0000,false,FLOOD,n1 1>]
+		receive_flood START from n2, through n2
+	OLD FLOOD {"n1"=>{"n2"=>1}, "n2"=>{"n1"=>1}}
+		receive_flood END
+arr ["n2", "n2", "n1", "001", "0000", "false", "FLOOD", "n1 1;n1 1;n1 1"]
+LISTENER: received [<n2,n2,n1,001,0000,false,FLOOD,n1 1;n1 1;n1 1>]
+		receive_flood START from n2, through n2
+	OLD FLOOD {"n1"=>{"n2"=>1}, "n2"=>{"n1"=>1}}
+		receive_flood END
+arr ["n2", "n2", "n1", "000", "0000", "false", "FLOOD", "n1 1"]
+LISTENER: received [<n2,n2,n1,000,0000,false,FLOOD,n1 1>]
+		receive_flood START from n2, through n2
+	OLD FLOOD {"n1"=>{"n2"=>1}, "n2"=>{"n1"=>1}}
+		receive_flood END
+arr ["n2", "n2", "n1", "001", "0000", "false", "FLOOD", "n1 1;n1 1;n1 1"]
+LISTENER: received [<n2,n2,n1,001,0000,false,FLOOD,n1 1;n1 1;n1 1>]
+		receive_flood START from n2, through n2
+	OLD FLOOD {"n1"=>{"n2"=>1}, "n2"=>{"n1"=>1}}
+		receive_flood END
+arr ["n2", "n2", "n1", "002", "0000", "false", "FLOOD", "n11;n1 1;n1 1"]
+LISTENER: received [<n2,n2,n1,002,0000,false,FLOOD,n11;n1 1;n1 1>]
+		receive_flood START from n2, through n2
+	OLD FLOOD {"n1"=>{"n2"=>1}, "n2"=>{"n1"=>1}}
+	COMMAND_HANDLER: updating routing table
+	NEW FLOOD [{"n1"=>{"n2"=>1}, "n2"=>{"n1"=>1, "n11"=>0}}]
+	OLD TABLE {"n2"=>{"NEXT_NODE"=>"n2", "DIST"=>1}}
+	node n1, prev n1, dist 0
+	node n2, prev n1, dist 1
+	node n11, prev n2, dist 1
+	n$neihbs ["n2"]
+	mnext n2
+	new TABLE {"n2"=>{"NEXT_NODE"=>"n2", "DIST"=>1}, "n11"=>{"DIST"=>1, "NEXT_NODE"=>"n2"}}
+		receive_flood END
+arr ["n2", "n2", "n1", "000", "0000", "false", "FLOOD", "n1 1"]
+LISTENER: received [<n2,n2,n1,000,0000,false,FLOOD,n1 1>]
+		receive_flood START from n2, through n2
+	OLD FLOOD {"n1"=>{"n2"=>1}, "n2"=>{"n1"=>1, "n11"=>0}}
+		receive_flood END
+arr ["n2", "n2", "n1", "001", "0000", "false", "FLOOD", "n1 1;n1 1;n1 1"]
+LISTENER: received [<n2,n2,n1,001,0000,false,FLOOD,n1 1;n1 1;n1 1>]
+		receive_flood START from n2, through n2
+	OLD FLOOD {"n1"=>{"n2"=>1}, "n2"=>{"n1"=>1, "n11"=>0}}
+		receive_flood END
+arr ["n2", "n2", "n1", "002", "0000", "false", "FLOOD", "n11;n1 1;n1 1"]
+LISTENER: received [<n2,n2,n1,002,0000,false,FLOOD,n11;n1 1;n1 1>]
+		receive_flood START from n2, through n2
+	OLD FLOOD {"n1"=>{"n2"=>1}, "n2"=>{"n1"=>1, "n11"=>0}}
+		receive_flood END
+arr ["n2", "n2", "n1", "000", "0000", "false", "FLOOD", "n1 1"]
+LISTENER: received [<n2,n2,n1,000,0000,false,FLOOD,n1 1>]
+		receive_flood START from n2, through n2
+	OLD FLOOD {"n1"=>{"n2"=>1}, "n2"=>{"n1"=>1, "n11"=>0}}
+		receive_flood END
+arr ["n2", "n2", "n1", "001", "0000", "false", "FLOOD", "n1 1;n1 1;n1 1"]
+LISTENER: received [<n2,n2,n1,001,0000,false,FLOOD,n1 1;n1 1;n1 1>]
+		receive_flood START from n2, through n2
+	OLD FLOOD {"n1"=>{"n2"=>1}, "n2"=>{"n1"=>1, "n11"=>0}}
+		receive_flood END
+arr ["n2", "n2", "n1", "002", "0000", "false", "FLOOD", "n11;n1 1;n1 1"]
+LISTENER: received [<n2,n2,n1,002,0000,false,FLOOD,n11;n1 1;n1 1>]
+		receive_flood START from n2, through n2
+	OLD FLOOD {"n1"=>{"n2"=>1}, "n2"=>{"n1"=>1, "n11"=>0}}
+		receive_flood END
+arr ["n2", "n2", "n1", "003", "0000", "false", "FLOOD", "n1 1;n1 1;n1 1"]
+LISTENER: received [<n2,n2,n1,003,0000,false,FLOOD,n1 1;n1 1;n1 1>]
+		receive_flood START from n2, through n2
+	OLD FLOOD {"n1"=>{"n2"=>1}, "n2"=>{"n1"=>1, "n11"=>0}}
+		receive_flood END
+arr ["n2", "n2", "n1", "000", "0000", "false", "FLOOD", "n1 1"]
+LISTENER: received [<n2,n2,n1,000,0000,false,FLOOD,n1 1>]
+		receive_flood START from n2, through n2
+	OLD FLOOD {"n1"=>{"n2"=>1}, "n2"=>{"n1"=>1, "n11"=>0}}
+		receive_flood END
+arr ["n2", "n2", "n1", "001", "0000", "false", "FLOOD", "n1 1;n1 1;n1 1"]
+LISTENER: received [<n2,n2,n1,001,0000,false,FLOOD,n1 1;n1 1;n1 1>]
+		receive_flood START from n2, through n2
+	OLD FLOOD {"n1"=>{"n2"=>1}, "n2"=>{"n1"=>1, "n11"=>0}}
+		receive_flood END
+arr ["n2", "n2", "n1", "002", "0000", "false", "FLOOD", "n11;n1 1;n1 1"]
+LISTENER: received [<n2,n2,n1,002,0000,false,FLOOD,n11;n1 1;n1 1>]
+		receive_flood START from n2, through n2
+	OLD FLOOD {"n1"=>{"n2"=>1}, "n2"=>{"n1"=>1, "n11"=>0}}
+		receive_flood END
+arr ["n2", "n2", "n1", "003", "0000", "false", "FLOOD", "n1 1;n1 1;n1 1"]
+LISTENER: received [<n2,n2,n1,003,0000,false,FLOOD,n1 1;n1 1;n1 1>]
+		receive_flood START from n2, through n2
+	OLD FLOOD {"n1"=>{"n2"=>1}, "n2"=>{"n1"=>1, "n11"=>0}}
+		receive_flood END
+MESSAGE_HANDLER: sent [<n1,n1,n2,002,0000,false,FLOOD,n2 1>] SEQ[2]
+data before n2 1;
+data after  n2 1
+	added [<n1,n1,n2,003,0000,false,FLOOD,n2 1>] to queue from n1 seq=3
+time = 4
